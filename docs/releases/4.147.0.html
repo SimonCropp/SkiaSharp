@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Version 4.147.0 | SkiaSharp </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Version 4.147.0 | SkiaSharp ">
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../TOC.html">
+      <meta name="docfx:tocrel" content="TOC.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/mono/SkiaSharp/blob/main/documentation/docfx/releases/4.147.0.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="version-41470">Version 4.147.0</h1>
+
+<blockquote>
+<p><strong>Major version release — Skia milestone 147, variable fonts &amp; new platform targets</strong> · Preview only · <a href="https://www.nuget.org/packages/SkiaSharp/4.147.0-preview.1.1">NuGet</a> · <a href="https://github.com/mono/SkiaSharp/releases/tag/v4.147.0-preview.1.1">GitHub Release</a></p>
+</blockquote>
+<h2 id="highlights">Highlights</h2>
+<p>SkiaSharp 4.147.0 is a major version leap — jumping from 3.x to 4.x — powered by a Skia engine upgrade all the way to Chrome milestone 147. The headline feature is full <strong>variable font support</strong> contributed by ❤️ <a href="https://github.com/ramezgerges">@ramezgerges</a>, enabling runtime font variation axis control, typeface cloning, and allocation-free Span APIs across both SkiaSharp and HarfBuzzSharp. New platform targets for Tizen and Android Bionic (❤️ <a href="https://github.com/4Darmygeometry">@4Darmygeometry</a>), color font palette support, and a long-standing Android rendering fix (❤️ <a href="https://github.com/SimonvBez">@SimonvBez</a>) round out the release.</p>
+<h2 id="breaking-changes">Breaking Changes</h2>
+<p><em>None in this release.</em> The major version bump from 3.x to 4.x reflects the engine leap to milestone 147; existing APIs are preserved.</p>
+<h2 id="new-features">New Features</h2>
+<h3 id="engine">Engine</h3>
+<ul>
+<li><strong>Bump Skia to milestone 132</strong> — Intermediate engine upgrade from the previous baseline. ❤️ <a href="https://github.com/ramezgerges">@ramezgerges</a> (<a href="https://github.com/mono/SkiaSharp/pull/3560">#3560</a>)</li>
+<li><strong>Bump Skia to milestone 133</strong> — Continues the engine upgrade path with generation (G) improvements. (<a href="https://github.com/mono/SkiaSharp/pull/3660">#3660</a>)</li>
+<li><strong>Bump Skia to milestone 147</strong> — Lands the target milestone powering the 4.x series. ❤️ <a href="https://github.com/ramezgerges">@ramezgerges</a> (<a href="https://github.com/mono/SkiaSharp/pull/3702">#3702</a>)</li>
+<li><strong>Upgrade major version from 3.x to 4.x</strong> — Aligns the SkiaSharp version scheme with the Skia milestone and future-proofs version references. (<a href="https://github.com/mono/SkiaSharp/pull/3640">#3640</a>)</li>
+</ul>
+<h3 id="text--fonts">Text &amp; Fonts</h3>
+<ul>
+<li><strong>Variable font support</strong> — Adds <code>SKFourByteTag</code>, <code>SKFontVariationAxis</code>, <code>SKFontArguments</code>, and new <code>SKTypeface</code> APIs (<code>VariationDesignParameters</code>, <code>VariationDesignPosition</code>, <code>Clone</code>) with full Span overloads. HarfBuzzSharp gains matching <code>Face</code> and <code>Font</code> variation APIs. 151 tests and a gallery sample included. ❤️ <a href="https://github.com/ramezgerges">@ramezgerges</a> (<a href="https://github.com/mono/SkiaSharp/pull/3703">#3703</a>)</li>
+<li><strong>Color font palette support</strong> — Adds color palette querying and selection for color fonts (e.g., COLRv1), and improves variable font robustness. (<a href="https://github.com/mono/SkiaSharp/pull/3742">#3742</a>)</li>
+<li><strong>Fix default-typeface resolution</strong> — Moves default typeface resolution to the managed layer, fixing inconsistencies across platforms. ❤️ <a href="https://github.com/ramezgerges">@ramezgerges</a> (<a href="https://github.com/mono/SkiaSharp/pull/3730">#3730</a>)</li>
+</ul>
+<h3 id="api-surface">API Surface</h3>
+<ul>
+<li><strong>SKSamplingOptions for surface/canvas drawing</strong> — Adds <code>SKSamplingOptions</code> support to <code>SKSurface.Draw</code> and <code>SKCanvas.DrawSurface</code>, enabling control over filtering when drawing surfaces. ❤️ <a href="https://github.com/Copilot">@Copilot</a> (<a href="https://github.com/mono/SkiaSharp/pull/3491">#3491</a>)</li>
+<li><strong>PolySharp for C# 13 on legacy TFMs</strong> — Enables modern C# 13 language features (required-init, <code>ReadOnlySpan</code> patterns, etc.) on older target frameworks via PolySharp. ❤️ <a href="https://github.com/4Darmygeometry">@4Darmygeometry</a> (<a href="https://github.com/mono/SkiaSharp/pull/3642">#3642</a>)</li>
+</ul>
+<h3 id="platform">Platform</h3>
+<ul>
+<li><strong>Tizen x64 and arm64 native builds</strong> — Adds native build support for Tizen on both x64 and arm64 architectures. (<a href="https://github.com/mono/SkiaSharp/pull/3620">#3620</a>)</li>
+<li><strong>Android Bionic Library build support</strong> — Enables building SkiaSharp natively against Android's Bionic libc. ❤️ <a href="https://github.com/4Darmygeometry">@4Darmygeometry</a> (<a href="https://github.com/mono/SkiaSharp/pull/3217">#3217</a>)</li>
+</ul>
+<h2 id="security">Security</h2>
+<ul>
+<li><strong>Update libexpat to 2.7.5</strong> — Picks up upstream security and bug fixes. (<a href="https://github.com/mono/SkiaSharp/pull/3717">#3717</a>)</li>
+<li><strong>Update libpng to 1.6.58</strong> — Picks up upstream security and bug fixes. (<a href="https://github.com/mono/SkiaSharp/pull/3718">#3718</a>)</li>
+</ul>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<ul>
+<li><strong>Fixed SKGLView on Android not rendering with TabBar</strong> — Resolves a long-standing issue where <code>SKGLView</code> would not render when used inside a <code>TabBar</code> layout on Android. ❤️ <a href="https://github.com/SimonvBez">@SimonvBez</a> (<a href="https://github.com/mono/SkiaSharp/pull/3076">#3076</a>)</li>
+<li><strong>Fix x86 .NET Framework threading test OOM failures</strong> — Addresses out-of-memory crashes in threading tests on 32-bit .NET Framework. (<a href="https://github.com/mono/SkiaSharp/pull/3674">#3674</a>)</li>
+<li><strong>Fix Debian 13 Docker builds</strong> — Fixes the native build for Debian 13 on non-loong64/riscv64 architectures. (<a href="https://github.com/mono/SkiaSharp/pull/3747">#3747</a>)</li>
+</ul>
+<h2 id="platform-support">Platform Support</h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>What's New</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🎨 Core API</td>
+<td>Variable fonts, color palettes, SKSamplingOptions for surface drawing</td>
+</tr>
+<tr>
+<td>🤖 Android</td>
+<td>Bionic Library builds, SKGLView TabBar rendering fix</td>
+</tr>
+<tr>
+<td>📺 Tizen</td>
+<td>x64 and arm64 native builds</td>
+</tr>
+<tr>
+<td>🪟 Windows</td>
+<td>x86 .NET Framework threading fix</td>
+</tr>
+<tr>
+<td>🐧 Linux</td>
+<td>Debian 13 Docker build fix</td>
+</tr>
+<tr>
+<td>🌐 WebAssembly</td>
+<td>Uno Platform gallery and SkiaFiddle samples</td>
+</tr>
+</tbody>
+</table>
+<p>Plus several CI, documentation, skill, and workflow improvements.</p>
+<h2 id="community-contributors-">Community Contributors ❤️</h2>
+<table>
+<thead>
+<tr>
+<th>Contributor</th>
+<th>What They Did</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ramezgerges">@ramezgerges</a></td>
+<td>Variable font support, Skia milestone bumps (132 &amp; 147), default-typeface fix, CppAst generator update, Uno Platform samples</td>
+</tr>
+<tr>
+<td><a href="https://github.com/4Darmygeometry">@4Darmygeometry</a></td>
+<td>Android Bionic Library build support, PolySharp for C# 13 on legacy TFMs</td>
+</tr>
+<tr>
+<td><a href="https://github.com/SimonvBez">@SimonvBez</a></td>
+<td>Fixed SKGLView Android TabBar rendering (first contribution! 🎉)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Copilot">@Copilot</a></td>
+<td>Added SKSamplingOptions support to surface/canvas drawing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://github.com/mono/SkiaSharp/compare/v3.119.4-preview.1.1...v4.147.0-preview.1.1">Full Changelog</a></li>
+<li><a href="https://www.nuget.org/packages/SkiaSharp/4.147.0-preview.1.1">NuGet Package</a></li>
+<li><a href="https://github.com/mono/SkiaSharp/tree/main/changelogs/SkiaSharp/4.147.0">API Diff</a></li>
+</ul>
+<hr>
+<h2 id="preview-1-april-28-2026">Preview 1 (April 28, 2026)</h2>
+<p>Initial preview of the 4.x series — Skia engine leaps to milestone 147, variable font support, color font palettes, new Tizen and Android Bionic platform targets, and SKSamplingOptions for surface drawing.</p>
+<p><a href="https://github.com/mono/SkiaSharp/compare/v3.119.4-preview.1.1...v4.147.0-preview.1.1">Full Changelog</a></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/mono/SkiaSharp/blob/main/documentation/docfx/releases/4.147.0.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          main · main · 1ee0a59
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
